@@ -1,0 +1,28 @@
+{
+    "name": "mern-shopping-list",
+    "version": "1.0.0",
+    "description": "Shopping list built with the MERN stack",
+    "main": "server.js",
+    "scripts": {
+        "client-install": "npm install --prefix client",
+        "_comment0": "when the project is uploaded on github, we may not have node modules installed in client folder. use 'npm run client-install' and it will install all client dependencies without cd into the folder",
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "_comment1": "the diff between start and server is after making server side change in start, we would have to relaod it everytime; but not in server.",
+        "client": "npm start --prefix client",
+        "_comment2": "it will go in client folder and then start. Can also use 'cd client && npm start'",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "_comment3": "runs both start and server together"
+    },
+    "author": "Akash",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "concurrently": "^6.4.0",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.14"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
